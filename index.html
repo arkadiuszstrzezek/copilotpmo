@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PMO Assistant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#0b1220;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563eb 0%,transparent 40%),
+    radial-gradient(circle at bottom right,#7c3aed 0%,transparent 40%);
+    opacity:.45;
+    z-index:-2;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    backdrop-filter:blur(120px);
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#60a5fa;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#dbeafe;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero-content{
+    max-width:1000px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-size:68px;
+    font-weight:700;
+    line-height:1.1;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#60a5fa,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    margin-top:25px;
+    font-size:22px;
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.btn-primary{
+    padding:18px 34px;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    border:none;
+    color:white;
+    border-radius:15px;
+    font-size:16px;
+    cursor:pointer;
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+}
+
+.btn-secondary{
+    padding:18px 34px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    color:white;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+/* FEATURES */
+
+.features{
+    padding:120px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:42px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    padding:35px;
+    border-radius:25px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+/* COPILOT */
+
+.copilot-section{
+    padding:120px 8%;
+}
+
+.copilot-box{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    overflow:hidden;
+    backdrop-filter:blur(20px);
+}
+
+.copilot-header{
+    padding:25px;
+    font-size:24px;
+    font-weight:600;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+iframe{
+    width:100%;
+    height:800px;
+    border:none;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+PMO<span>Assistant</span>
+</div>
+
+<div class="nav-links">
+<a href="#">Dashboard</a>
+<a href="#">Roadmap</a>
+<a href="#">Risks</a>
+<a href="#">Projects</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+🚀 AI Powered Product Management
+</div>
+
+<h1>
+Twój Inteligentny
+<span>PMO Assistant</span>
+</h1>
+
+<p>
+Zarządzaj harmonogramami, ryzykami, backlogiem,
+kamieniami milowymi i dokumentacją projektową
+z pomocą sztucznej inteligencji.
+</p>
+
+<div class="buttons">
+<button class="btn-primary">
+Uruchom Asystenta
+</button>
+
+<button class="btn-secondary">
+Poznaj możliwości
+</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="section-title">
+<h2>W czym pomoże Ci AI?</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">📅</div>
+<h3>Harmonogramy</h3>
+<p>
+Analiza terminów, kamieni milowych oraz
+potencjalnych opóźnień.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">⚠️</div>
+<h3>Ryzyka</h3>
+<p>
+Automatyczna identyfikacja zagrożeń
+i rekomendacja działań.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">📈</div>
+<h3>Status projektu</h3>
+<p>
+Generowanie raportów dla zarządu
+oraz interesariuszy.
+</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🤖</div>
+<h3>Copilot Studio</h3>
+<p>
+Wsparcie Product Managera
+24/7 w jednym miejscu.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="copilot-section">
+
+<div class="copilot-box">
+
+<div class="copilot-header">
+💬 PMO AI Assistant
+</div>
+
+<iframe src="TWOJ_LINK_COPILOT_STUDIO"></iframe>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 PMO Assistant | Powered by Microsoft Copilot Studio
+</footer>
+
+</body>
+</html>
